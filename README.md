@@ -1,88 +1,206 @@
-# Community made Blender I3D Exporter
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
-[![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.png?v=103)](https://opensource.org/licenses/GPL-3.0/)
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
-![Latest Release](https://github.com/StjerneIdioten/I3D-Blender-Addon/workflows/Release/badge.svg)
+# I3D Blender Addon
 
-<p align="left">
-  <a href="https://www.buymeacoffee.com/StjerneIdioten">Support Me</a> •
-  <a href="https://stjerneidioten.github.io/I3D-Blender-Addon">Documentation</a> •
-  <a href="https://github.com/StjerneIdioten/I3D-Blender-Addon/releases/latest/download/i3d_exporter.zip">Download Newest Release</a> •
-  <a href="https://github.com/StjerneIdioten/I3D-Blender-Addon/releases">All Releases</a> •
-  <a href="https://github.com/StjerneIdioten/I3D-Blender-Addon/discussions">Discussion Forum</a> •
-</p>
+Addon Blender communautaire pour exporter des projets vers le format **I3D**, utilisé par **GIANTS Engine** et **Farming Simulator**.
 
-## Donate
-If you enjoy the exporter and want to express your gratitude with a little something, then here is a couple of links. It is in no way mandatory and I will continue doing my best to create the best exporter no matter how many donations role in 😉 I have spent 100's of hours so far and I plan on spending many more.
+Ce dépôt est une version maintenue / adaptée du projet I3D Blender Addon.  
+L’objectif est de garder un exporter utilisable avec les versions récentes de Blender et de faciliter le travail de modding pour Farming Simulator.
 
-<a href="https://www.buymeacoffee.com/StjerneIdioten"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a beverage&emoji=🥤&slug=StjerneIdioten&button_colour=BD5FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"></a>
+## Statut du projet
 
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=3BLFKTJDUC4Y6&currency_code=EUR&source=url" target="_blank"><img src="https://www.paypalobjects.com/en_US/DK/i/btn/btn_donateCC_LG.gif" alt="Buy Me A Coffee"></a>
+Ce dépôt est en cours de maintenance.
 
+Les objectifs principaux sont :
 
-## Description
+- maintenir la compatibilité avec les versions récentes de Blender ;
+- corriger les bugs d’export ;
+- améliorer la documentation ;
+- garder un processus de contribution propre ;
+- faciliter le travail avec Codex / ChatGPT pour les corrections et améliorations.
 
-This project aims to develop and maintain an entirely new i3d exporter addon for Blender. The main goals are maintaining an exporter that is up to date with the newest Blender versions and adding long sought features such as skinned meshes, mergegroups and what ever else the community might have a need for.
+## Fonctionnalités
 
-The current status is that the exporter can do most of the things that the maya exporter can do and now makes Blender a viable option for creating mods for Giants Engine games.
+L’addon permet d’exporter des scènes Blender vers le format I3D utilisé par GIANTS Engine.
 
-## Documentation
-The official documentation for the exporter can be found [here](https://stjerneidioten.github.io/I3D-Blender-Addon/) and will be updated as I go along. 
+Selon les versions et les fichiers utilisés, il peut notamment gérer :
 
-Currently a lot of things are missing and any help with documentation will be appreciated. The docs are hosted as a github page within this very repository and is built from the *docs* folder using sphinx and the Read the Docs theme, which you might recognize from Blenders own documentation.
+- objets 3D ;
+- meshes ;
+- matériaux ;
+- lumières ;
+- attributs utilisateur ;
+- options d’export ;
+- éléments nécessaires au modding Farming Simulator.
 
-The user **Redphoenix** from **VertexDezign** has been so kind as to put together two videos showcasing how to use the exporter, they can be found at the following links:
-* [Redphoenix Youtube Showcase](https://www.youtube.com/watch?v=lRDPuKh9gow): *Showing all of the most important features*
-* [Redphoenix Youtube Full Tutorial](https://www.youtube.com/watch?v=O1jBP9EVauU&t=4s): *A complete exporting walktrough*
+Certaines fonctionnalités peuvent dépendre de la version de Blender, de Farming Simulator ou de GIANTS Editor utilisée.
+
+## Compatibilité
+
+La version minimale de Blender est déclarée dans le fichier :
+
+```text
+addon/i3dio/__init__.py
+```
+
+Avant de signaler un bug, merci de vérifier :
+
+- la version de Blender utilisée ;
+- la version de l’addon ;
+- le système d’exploitation ;
+- la version Farming Simulator / GIANTS Editor si le problème concerne l’export ou l’import.
 
 ## Installation
-Installation instructions can be found described in great detail [here](https://stjerneidioten.github.io/I3D-Blender-Addon/installation.html), but it's more or less just a standard Blender addon installation.
 
-The newest release can always be found [here](https://github.com/StjerneIdioten/I3D-Blender-Addon/releases/latest) and the [releases page](https://github.com/StjerneIdioten/I3D-Blender-Addon/releases) contains all currently available releases. This consists of both legacy versions for older Blender versions and different development versions with experimental features.
+Méthode générale :
 
-The following table has an overview of the available exporter versions. Legacy versions are kept around for older Blender versions, but they are not actively developed anymore nor do they get new features or bug fixes.
+1. Télécharge le fichier zip de l’addon depuis les releases du dépôt.
+2. Ouvre Blender.
+3. Va dans :
 
-Blender Version | Exporter Version
---------|-------
-2.92 | [Latest](https://github.com/StjerneIdioten/I3D-Blender-Addon/releases/latest/download/i3d_exporter.zip)
-2.91 | [v3.0.0](https://github.com/StjerneIdioten/I3D-Blender-Addon/releases/download/v3.0.0/i3d_exporter.zip)
-2.90 | [v1.2.1](https://github.com/StjerneIdioten/I3D-Blender-Addon/releases/download/v1.2.1/i3d_exporter.zip)
-2.83 | [v0.10.0](https://github.com/StjerneIdioten/I3D-Blender-Addon/releases/download/v0.10.0/i3d_exporter.zip)
+```text
+Edit > Preferences > Add-ons
+```
 
+4. Clique sur **Install**.
+5. Sélectionne le fichier zip de l’addon.
+6. Active l’addon dans la liste des addons Blender.
+7. Redémarre Blender si nécessaire.
 
-## Help
+## Installation en développement
 
-If you need help with the addon in any way, the following channels are available:
-* [Documentation](https://stjerneidioten.github.io/I3D-Blender-Addon): The documentation will eventually contain all information about every aspect of the exporter
-* [Issue Tracker](https://github.com/StjerneIdioten/I3D-Blender-Addon/issues): If you come across any bugs, please post them here.
-* [Discussion Forum](https://github.com/StjerneIdioten/I3D-Blender-Addon/discussions): The official discussion forum hosted here on github
-* [VertexDezign Discord](https://discord.com/invite/vertexdezign): There is an official support channel available for the exporter
+Pour travailler sur le code :
 
-I can also be reached in several other places, I am not hard to find through my nickname. But please keep exporter related support to the official channels listed here. So that it might come in handy for anyone else with the same problem.
+1. Clone le dépôt.
+2. Ouvre Blender.
+3. Installe ou lie le dossier :
 
-## Development Diaries
+```text
+addon/i3dio
+```
 
-Ongoing development will, from time to time, be discussed/shared through development diaries. This list will keep track of them.
-* **#000** - [Status of Exporter Development](https://github.com/StjerneIdioten/I3D-Blender-Addon/discussions/129) *(22/04-2021)*
+4. Active l’addon dans Blender.
+5. Lance les vérifications Python après modification.
 
-## Mod Showcase
+Commande minimale de vérification :
 
-Here you can see a few mods created using the exporter. This is not an exhaustive list, but mostly just to give a view of what is possible with the exporter.
-If you want your mod in this list then please feel free to contact me through the discussion forum.
+```bash
+python -m compileall addon/i3dio
+```
 
-- [Veenhuis JVK 16000](https://www.farming-simulator.com/mod.php?lang=en&country=dk&mod_id=158125&title=fs2019)
-- [Massey Ferguson 700](https://www.farming-simulator.com/mod.php?lang=en&country=dk&mod_id=188982&title=fs2019)
-- [Marshall QM/14](https://www.farming-simulator.com/mod.php?lang=en&country=dk&mod_id=187971&title=fs2019)
-- [Marston ACE 10 1993](https://www.farming-simulator.com/mod.php?lang=en&country=dk&mod_id=187042&title=fs2019)
-- [Marston 22' Bale Trailer 1993](https://www.farming-simulator.com/mod.php?lang=en&country=dk&mod_id=183611&title=fs2019)
-- [Marston ACE 10 1984](https://www.farming-simulator.com/mod.php?lang=en&country=dk&mod_id=181044&title=fs2019)
-- [NMC Timber Carrier](https://www.farming-simulator.com/mod.php?lang=en&country=us&mod_id=186549&title=fs2019)
-- [NMC U Blade](https://www.farming-simulator.com/mod.php?lang=en&country=us&mod_id=187653&title=fs2019)
-- [NMC Woodchip Transport Pack](https://www.farming-simulator.com/mod.php?lang=en&country=us&mod_id=185747&title=fs2019)
-- [NMC Rambler Pack](https://www.farming-simulator.com/mod.php?lang=en&country=us&mod_id=181832&title=fs2019)
-- [NMC Raptor Pack](https://www.farming-simulator.com/mod.php?lang=en&country=us&mod_id=181833&title=fs2019)
-- [NMC Reaper Pack](https://www.farming-simulator.com/mod.php?lang=en&country=us&mod_id=181834&title=fs2019)
-- [NMC Backbed Pack](https://www.farming-simulator.com/mod.php?lang=en&country=us&mod_id=181835&title=fs2019)
-- [NMC Scarok Pack](https://www.farming-simulator.com/mod.php?lang=en&country=us&mod_id=135769&title=fs2019)
-- [NMC Wheel Loader](https://www.farming-simulator.com/mod.php?lang=en&country=us&mod_id=189680&title=fs2019)
-- [NMC Pickup Blade](https://www.farming-simulator.com/mod.php?lang=en&country=us&mod_id=189681&title=fs2019)
+## Téléchargement
+
+Quand des releases sont disponibles, elles sont accessibles depuis la page **Releases** de ce dépôt.
+
+Le fichier d’addon est généralement fourni sous forme de zip.
+
+## Signaler un bug
+
+Pour signaler un problème :
+
+1. Va dans l’onglet **Issues**.
+2. Clique sur **New issue**.
+3. Choisis le modèle **Rapport de bug**.
+4. Remplis les informations demandées.
+
+Merci d’inclure :
+
+- version de Blender ;
+- version de l’addon ;
+- système d’exploitation ;
+- version Farming Simulator / GIANTS Editor si concernée ;
+- étapes pour reproduire ;
+- résultat attendu ;
+- résultat obtenu ;
+- logs ou message d’erreur ;
+- capture d’écran ou fichier de test si possible.
+
+Un bug bien décrit se corrige beaucoup plus vite qu’un simple “ça ne marche pas”.
+
+## Contribuer
+
+Les contributions sont les bienvenues.
+
+Avant de proposer une modification, lis le fichier :
+
+```text
+CONTRIBUTING.md
+```
+
+Le dépôt contient aussi :
+
+```text
+AGENTS.md
+.github/pull_request_template.md
+.github/ISSUE_TEMPLATE/bug_report.yml
+.github/workflows/check.yml
+```
+
+Ces fichiers servent à garder un projet propre, compréhensible et plus facile à maintenir.
+
+## Vérifications automatiques
+
+Le dépôt utilise GitHub Actions pour vérifier automatiquement le code Python.
+
+Le workflow principal lance :
+
+```bash
+python -m compileall addon/i3dio
+```
+
+Ce contrôle permet de détecter les erreurs de syntaxe Python avant d’aller plus loin.
+
+## Releases
+
+Le dépôt utilise un système de release automatisé basé sur semantic-release.
+
+Les fichiers liés aux releases sont notamment :
+
+```text
+.releaserc.yaml
+.github/workflows/release.yml
+prepare_release.sh
+```
+
+Merci de ne pas modifier ces fichiers sans raison claire.
+
+## Messages de commit
+
+Merci d’utiliser des messages de commit clairs.
+
+Exemples :
+
+```text
+fix: correct export crash
+feat: add new export option
+docs: update README
+ci: add workflow check
+chore: clean project files
+```
+
+Types courants :
+
+- `feat:` nouvelle fonctionnalité ;
+- `fix:` correction de bug ;
+- `docs:` documentation ;
+- `ci:` GitHub Actions / intégration continue ;
+- `chore:` entretien du projet ;
+- `refactor:` nettoyage ou restructuration sans changement fonctionnel ;
+- `test:` ajout ou modification de tests.
+
+## Projet original
+
+Ce dépôt est basé sur le travail communautaire autour de l’exporter I3D Blender.
+
+Crédits historiques :
+
+- StjerneIdioten ;
+- GIANTS Software ;
+- Jason Oppermann ;
+- contributeurs communautaires.
+
+Merci aux développeurs et contributeurs qui ont permis à cet addon d’exister.
+
+## Licence
+
+Ce projet conserve la licence du projet d’origine.
+
+Merci de ne pas modifier la licence sans discussion préalable.
