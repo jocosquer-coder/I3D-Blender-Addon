@@ -27,3 +27,31 @@ Après une modification Python, lancer au minimum :
 
 ```bash
 python -m compileall addon/i3dio
+```
+
+Pour tester la création du zip de release :
+
+```bash
+./prepare_release.sh 0.0.0-test
+```
+
+## Release
+
+Le dépôt utilise semantic-release.
+
+Les commits doivent suivre ce style :
+
+- `feat:` pour une nouvelle fonctionnalité
+- `fix:` pour une correction
+- `docs:` pour la documentation
+- `ci:` pour les workflows GitHub Actions
+- `chore:` pour l’entretien du projet
+
+## Pull requests
+
+Avant de proposer une PR :
+
+- vérifier que le code Python compile ;
+- vérifier que les fichiers modifiés sont nécessaires ;
+- résumer clairement ce qui a changé ;
+- indiquer les tests lancés.
