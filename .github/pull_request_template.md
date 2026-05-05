@@ -43,3 +43,28 @@ Indique la version utilisée pour tester :
 
 ```text
 Blender :
+```
+
+## Impact utilisateur
+
+Cette modification change-t-elle quelque chose pour l’utilisateur ?
+
+- [ ] Non
+- [ ] Oui, interface utilisateur
+- [ ] Oui, comportement d’export
+- [ ] Oui, installation / configuration
+- [ ] Oui, documentation nécessaire
+
+Détails si nécessaire :
+
+```text
+
+```
+
+## Checklist avant merge
+
+- [ ] Le changement est limité et compréhensible
+- [ ] Le code Python compile
+- [ ] Les fichiers inutiles ne sont pas inclus
+- [ ] La documentation ou le README ont été mis à jour si nécessaire
+- [ ] Le résumé de la PR explique clairement le changement
