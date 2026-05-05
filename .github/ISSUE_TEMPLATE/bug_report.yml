@@ -1,0 +1,119 @@
+name: Rapport de bug
+description: Signaler un problème avec l'addon I3D Blender
+title: "[Bug] "
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de remplir ce formulaire avec le plus de détails possible.
+        Plus le rapport est précis, plus le bug sera facile à corriger.
+
+  - type: input
+    id: blender-version
+    attributes:
+      label: Version de Blender
+      description: Exemple : 4.4.0
+      placeholder: "4.4.0"
+    validations:
+      required: true
+
+  - type: input
+    id: addon-version
+    attributes:
+      label: Version de l'addon
+      description: Indique la version de l'addon utilisée.
+      placeholder: "Exemple : 0.0.0, v6.1.0, master..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Système d'exploitation
+      options:
+        - Windows
+        - Linux
+        - macOS
+        - Autre
+    validations:
+      required: true
+
+  - type: input
+    id: farming-simulator-version
+    attributes:
+      label: Version Farming Simulator / GIANTS Editor
+      description: Indique la version concernée si le problème est lié à l'export ou à l'import dans GIANTS Editor.
+      placeholder: "Exemple : FS22, FS25, GIANTS Editor 10..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: Description du problème
+      description: Explique clairement ce qui ne fonctionne pas.
+      placeholder: "Décris le problème ici."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Étapes pour reproduire
+      description: Liste les actions à faire pour reproduire le bug.
+      placeholder: |
+        1. Ouvrir Blender
+        2. Activer l'addon
+        3. Exporter le fichier
+        4. Voir l'erreur
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-result
+    attributes:
+      label: Résultat attendu
+      description: Qu'est-ce qui aurait dû se passer ?
+      placeholder: "L'export aurait dû se terminer sans erreur."
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-result
+    attributes:
+      label: Résultat obtenu
+      description: Qu'est-ce qui s'est réellement passé ?
+      placeholder: "Blender affiche une erreur / le fichier I3D est incomplet / l'addon ne se charge pas..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs ou message d'erreur
+      description: Colle ici les erreurs affichées par Blender, la console ou GIANTS Editor.
+      render: text
+      placeholder: "Colle les logs ici."
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra-files
+    attributes:
+      label: Fichier de test ou capture d'écran
+      description: Ajoute une capture d'écran ou un petit fichier de test si possible.
+      placeholder: "Glisse-dépose les fichiers ici si nécessaire."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Vérifications
+      options:
+        - label: J'ai vérifié que le problème existe avec la dernière version disponible de l'addon.
+          required: false
+        - label: J'ai cherché si une issue similaire existe déjà.
+          required: false
