@@ -37,8 +37,9 @@ bl_info = {
     "warning": "First Unofficial Alpha Version",
     "support": "COMMUNITY",
     "category": "Import-Export",
-"tracker_url": "https://github.com/jocosquer-coder/I3D-Blender-Addon/issues",
-"wiki_url": "https://github.com/jocosquer-coder/I3D-Blender-Addon#readme"
+    "tracker_url": "https://github.com/jocosquer-coder/I3D-Blender-Addon/issues",
+    "wiki_url": "https://github.com/jocosquer-coder/I3D-Blender-Addon#readme"
+}
 }
 
 def register():
