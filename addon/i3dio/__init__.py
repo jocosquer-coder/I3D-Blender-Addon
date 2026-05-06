@@ -40,7 +40,6 @@ bl_info = {
     "tracker_url": "https://github.com/jocosquer-coder/I3D-Blender-Addon/issues",
     "wiki_url": "https://github.com/jocosquer-coder/I3D-Blender-Addon#readme"
 }
-}
 
 def register():
     ui.helper_functions.register()
